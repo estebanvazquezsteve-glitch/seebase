@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SeeBase</title>
+<meta name="description" content="Pizarra colaborativa para mapas mentales, formas, fotos y presentaciones.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%230b0c0f' stroke='%23d9bd94' stroke-width='2'/%3E%3Cpath d='M16 3a13 13 0 0 1 0 26z' fill='%23d9bd94'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;600&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Geist+Mono:wght@400;500&family=Geist:wght@300..700&display=swap">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<main id="editor" hidden>
+  <div id="stage" data-tool="select">
+    <div id="grid" class="dots"></div>
+    <div id="world"><div id="w-frames"></div><div id="w-els"></div></div>
+    <div id="ov"></div>
+    <div id="cursors"></div>
+  </div>
+  <div id="vignette" aria-hidden="true"></div>
+  <header id="topL" class="glass ui"></header>
+  <header id="topR" class="glass ui"></header>
+  <nav id="rail" class="glass ui" aria-label="Herramientas"></nav>
+  <aside id="side" class="glass ui" aria-label="Capas y marcos" hidden></aside>
+  <aside id="insp" class="glass ui" aria-label="Propiedades"></aside>
+  <div id="flyout" class="glass ui" hidden></div>
+  <div id="qbar" class="glass ui" hidden></div>
+  <div id="timerbar" class="glass ui" hidden></div>
+  <div id="bottomR" class="ui">
+    <div id="mapwrap" class="glass"><canvas id="minimap" width="200" height="128" aria-label="Minimapa"></canvas></div>
+    <div id="zoombar" class="glass"></div>
+  </div>
+  <div id="thread" class="glass ui" hidden></div>
+  <div id="bars" aria-hidden="true"><i></i><i></i></div>
+  <div id="pr-ui">
+    <div class="pr-cap"><span id="pr-title"></span></div>
+    <div class="pr-nav">
+      <span id="pr-count" class="mono"></span>
+      <button id="pr-prev" type="button" aria-label="Anterior">←</button>
+      <button id="pr-next" type="button" aria-label="Siguiente">→</button>
+      <button id="pr-exit" type="button">Salir</button>
+    </div>
+  </div>
+</main>
+
+<section id="home" hidden></section>
+<section id="gate" hidden></section>
+<div id="toasts" aria-live="polite"></div>
+<div id="intro" aria-hidden="true"></div>
+<input type="file" id="filepick" accept="image/*" multiple hidden>
+<input type="file" id="jsonpick" accept="application/json,.json" hidden>
+
+<script src="js/util.js"></script>
+<script src="js/paint.js"></script>
+<script src="js/shapes.js"></script>
+<script src="js/store.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/render.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/actions.js"></script>
+<script src="js/inspector.js"></script>
+<script src="js/templates.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
