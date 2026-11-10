@@ -103,7 +103,10 @@ function route() {
   } catch {}
   if (S.backend) {
     Api = Cloud;
-    if (S.backend.protected && !S.backend.authed) await showGate();
+    if (S.backend.protected && !S.backend.authed) {
+      $('#intro').classList.add('gone');
+      await showGate();
+    }
   }
   initTools();
   if (innerWidth < 760) $('#insp').classList.add('closed');
